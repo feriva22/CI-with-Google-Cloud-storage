@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "long-adviser-271306",
+  "private_key_id": "cabe2c3f05086edc0312800652b60b334fd26d52",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCk/EqJIlmq0WKH\nV+0AnKwNre0TWDKYEE4lQdeKCFX0Ssgabp53h8t4dWCUVhCfYaCgvPum4TuoE+n6\nJ2+ErLiVRjnMHaGodB3SdkkzB8m75vHzmZV0/C9BX2rQlkZBgcmOJ6yqfhd/mmba\nAml6hM2vFVYlyEyjBKkmC3cByg/A8VwDv+SrqCND2D9UWp673CHSWCRVw4YzdTls\n5AnepYZ9vxd4tCFYg5YcDNdZpnLOrBTh8ZatBcRwhrmhNrO1DprUtF5V1jhbwKo6\nRqaULOGtescTrMPhQ6HPJjXXJ52pfRfAgQst2/yTCZf1QByWqwVgA4HsxMTQEXo3\nXRrd9TYpAgMBAAECggEAC7gfMdanuuSRXcNZVOeVOxxg2aJrQr83eBnjjez9OgpM\n9uRCgl7w6LKhva6GgL8vVquYKfrzU163U2Hwu1AYqd7ypRBMVtxkpsMfxYkdul+F\nu4PHiKdGCXeDtn6b3/RVFTFssXrCbYvkFx8AT8f6vtZCgzauncV9xGFFGildJBuD\nm44EveeaduPONmEm2WvltVBFOYrgFds+3I3ip4Te22OnuORHtEggoN9NJtK3zrcQ\nJZMF6PUo9gqpvWJzOvhuCQiYn+f1ilI1QwCKAyWfbUCPNe2RJwLIt90bWaQkugcg\noYAYp79dG3gCd23UFa3CjfqmaIGzLIDdGnSbFRiCPwKBgQDcevntxpgscwOz44r7\nK1VJum+UBlyZ+WLndkZKrX016wUffrmMRrXz8TmUPT4mT2eW6l+g0SJvvrzhrIwx\nScwWKrjpetjau3pfftWWLpXEzW8mzZvl9ZBueca1rPlvxYkin3jGOLa2jdRIUJEQ\nVKYPqMqo9RzFWZD9PnLU0qmMJwKBgQC/kJpM0/zrpRW8crY8VyICS8xw5XpS8nss\nl21QmKzAGTqEsdtIWCS67O98zHbELupeG3h89bn9Nep1Qw4A47QPlXqK2CMl82ew\n7mohXQsaUCnMlBCUY1e9cCHk0Gz/0Tlxb4Fce7DJ4YcUfqwExU1KAmaVZaZzvooc\nHx2DKyWNLwKBgEMILHZLG7bf3O9TLc0BNrPst8GkUYEKnjRK9EH+DwRWiL8zkwv/\n74/T9jKIkB2rpI3wgdRt4O9iaSCfihvuGNtgb8mkbMvLlf/0mtFHJoeoAbQlbNF0\nYE4GPhC8HzYJM5FQNLLnST2lTzYRMJlrcvVt1veZVf72JSupUdY8mgmfAoGAGIki\n2jhEqsHoOMzQfoYCexzOQJ+DvWAFWr7CZ5JGfgw9LIXDOk7f1XlHa0qc45/GsOr/\n0bF/cukW8JH4FzES/PP+UA5C4jd8znKa8U8DfwlJcUR9oyPeNwtHrBDuBQ39N4Q6\no2fMSu8x5/QZgDrtHU+VaAku+qAq/FMX6pb6Jk0CgYB4Y0etKUf5O0LiTvWUWBo8\nGXAvXdBZnEn/IJHuGRAa6a0hcvSULR9hHvyZoyAt3XxmrnKqRmKYeTmJ0yg058HG\n7WXENjquj2TVrH2fPH2B8LAyqlUMDal7yxUOtZSckEkssMO+/oTcQ02oQw+5c67s\nrg2O4lnbBJzZ3PkhGETEaw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "admin-manage-all@long-adviser-271306.iam.gserviceaccount.com",
+  "client_id": "111920539471580414314",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/admin-manage-all%40long-adviser-271306.iam.gserviceaccount.com"
+}
