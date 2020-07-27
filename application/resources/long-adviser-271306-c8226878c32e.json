@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "long-adviser-271306",
+  "private_key_id": "c8226878c32e730245e3ce50239711faad7e1a91",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQC2MmvmCJphjs48\nRkikK/tcWrB3nU8nk6Qkwia8abhHHrpG7RhVeGZiLVXjtiXp00gyX5Pl2QBZzTvH\nO32az+55qEfjnfWENO1OAjAp9anOiu/poJRn5xGMFslOam8wWCgfsiTAHre5UFGi\nZVqie/ajNjPAc2xcPG86krzlCnm2Agip6T5iDCLPn3jOIEjJ2bSAU+zcBjbX6dra\nm4ehkKdwwlr8IuIn4OyVyNDMLwSODifrQmTcqhn9LmqKhJaL2cI5OxD5ejpBN/VV\nPww79l7fIMrd17fPGnBSWPAXbUHVMbkvDvYsntbjZjvHPOzmkkFqNT6F1DvCgcI3\nvIHVot+PAgMBAAECggEAATbMMqmB0D7OdgCPF46P3rlflEFEMUKeseLPTxF/RlrY\nj+qgu/t3TZX5JnExk65lb6lLLkybX+Q26HV0UujdMT287BhCqUGQoT5XfTgWjEdI\n7cW02qcwatgOBr7XBDuNWbGEscXV08WXinb71LnxvOJ6egC3sW4Mdn30bBKwfyHf\nPZquBqrk+1oJwgCYgHm8Q8Wf9yChJbrk+TkSPmmgZa5C55EBZal1d6RKMfaHxkL/\ntLkZv7FL45du/eaAwypLbSBczsG6FfbPp3RKpZAP8fxROKH8VY7Hv77ygLBkriot\nnEpgCeh/S9JY34Q6uasRhni4Uw8Bn0oI42WYheDHFQKBgQDxt4sE7WaHOqPKT7j1\n59iOQw8G3WGzqeSjH5XxPWZLei1xrlIL08XAPpqv7r5BLpEuT4ffnFC433aMhrkt\nc+SQw2FFLkgQDRX8Z7VL7Wdr5zwYqgsyAAPoA/FDSteYYeNxyIDVCsTy942BpPxA\nFaetljbKfZ6lbHQnAC9UxpUkbQKBgQDA9oSpkh8Z4loOffY9j7yY5gvlfrvMxgBZ\nmoTuzUqJY/5hSS3GDQYrZvl28vCJOaJk/XJfvNWq7XWifn4NT51iGpVsZ8DxHJGT\ntXgbBWS8qCGojyCL8FFia+TNqh4XkO8XlXX10hrXIXW37W7nJVW9xxIYAkVAG0fy\nqWdagXt+awKBgQDcMx/DOl4XvVTu/hd6dV5zoyVyVIUn/hKahDC9lvi0s7XohSyb\nN65DxwR2V6EckkaSEMOv8qAa+v/tXuIdRSGou0TGmDXv4WvxB61CYSDBTOMTeP0/\n7IGigMzuR6UGXc6snkK3Uds/mENiIqHl45Rgb6K0byHyg02BJgr4SPwfNQKBgCbL\naTCOaCJUF7cCLBeEZm53Eb06FZe91yQspL0+GNY2fFYi2EkRJURkl5MKlMGCDNww\n+GW3GV4cD6Jzu/QBJasrnQ8GbQwMqlgAC/2iv/YN93ZkEC8SScp31rBim1oxkWA0\ndFrPuwW1fG1WFw3xu6ND+qdJDZMt6PEojdbsYV+xAn9KCDjLwhoYJv9EabIx/hFg\nJzTSjNkZZXJAU2Ag+lZpaS4ikRW5nvD98KFfklvmMC4XGDxSsU72/ySXn1LXWxra\nkejq3mCXd+EVCpngDwvhkMKDMABA/mB+SG749C3qiKnVTy5c5ypEhqdSZh0palL9\nnPtQU9rc6IO9R0nfX/eY\n-----END PRIVATE KEY-----\n",
+  "client_email": "gcs-mydms@long-adviser-271306.iam.gserviceaccount.com",
+  "client_id": "108895050407009506762",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gcs-mydms%40long-adviser-271306.iam.gserviceaccount.com"
+}
