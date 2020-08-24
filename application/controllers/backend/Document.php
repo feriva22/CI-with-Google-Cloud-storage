@@ -107,9 +107,9 @@ class Document extends CI_Controller {
                     $file_tmp  = $_FILES['doc_file']['tmp_name'];
                     $file_size = $_FILES['doc_file']['size'];
 
-                    $file_post_tmp = rename($file_tmp,'/tmp/'.$file_name) ? '/tmp/'.$file_name : NULL;
+                    //$file_post_tmp = rename($file_tmp,'/tmp/'.$file_name) ? '/tmp/'.$file_name : NULL;
 
-                    if($file_post_tmp !== NULL){
+                    if($file_tmp !== NULL){
                         //define storage class
 
                         $storage = new StorageClient([
@@ -121,7 +121,7 @@ class Document extends CI_Controller {
 
                         // Upload a file to the bucket WITH public url.
                         $bucket->upload(
-                            fopen($file_post_tmp, 'r'),
+                            fopen($file_tmp, 'r'),
                             [
                                 'name' => 'document/'.$file_name //save on directory document
                             ]
@@ -129,7 +129,7 @@ class Document extends CI_Controller {
                         //check file 
                         $object = $bucket->object('document/'.$file_name);
                         if($object->exists()){
-                            $info_obj = $object->info();
+							$info_obj = $object->info();
                         } else {
                             json_response('error','failed upload data');
                             exit();

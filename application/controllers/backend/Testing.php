@@ -1,6 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+header('Access-Control-Allow-Origin: *');
+Header('Access-Control-Allow-Headers: *'); //for allow any headers, insecure
+header("Access-Control-Allow-Methods: GET, OPTIONS,POST");
+
 require('./vendor/autoload.php');
 
 use Google\Cloud\Storage\StorageClient;
@@ -12,7 +16,9 @@ class Testing extends CI_Controller {
     }
 
     public function index(){
-        $this->load->view('backend/testing/index');
+		$data['url'] = generate_v4_post_policy(GCS_KEY,BUCKET_NAME,'/A.3 List Pegawai Desa.png');
+
+        $this->load->view('backend/testing/index',$data);
     }
 
     public function upload(){
@@ -31,12 +37,42 @@ class Testing extends CI_Controller {
         var_dump($resp->info());
     }
 
-    public function list($prefix = ''){
-        $objects = list_gcs_file(GCS_PETRO_KEY,BUCKET_PETRO_NAME,$prefix,TRUE);
+	public function list()
+	{
+		$prefix = isset($_GET['dir']) ? urldecode($_GET['dir']) : '/';
+        $objects = list_gcs_file(GCS_KEY,BUCKET_NAME,$prefix,TRUE);
         foreach($objects as $object){
             echo $object->name() . '<br>';
         }
-    }
+	}
+	
+	public function getUploadSigned(){
+		$policy = generate_v4_post_policy(GCS_KEY,BUCKET_NAME,'hilih/yolo.png');
+
+		$data['form'] = $policy[0];
+		$data['url'] = $policy[1];
+        $this->load->view('backend/testing/index',$data);
+	}
+
+	public function confirmUploaded(){
+		$objectName = $_GET['key'];
+		$bucket = $_GET['bucket'];
+		$etag = $_GET['etag'];
+
+		$info = info_gcs_file(GCS_KEY,$bucket,$objectName);
+
+		if(isset($info)){
+            var_dump($info);
+
+        }else {
+            echo "object \"$obj_name\" not found";
+        }
+
+	}
+
+	public function bucket_info(){
+		get_bucket_info(GCS_KEY,BUCKET_NAME);
+	}
 
     public function info($obj_name){
         $obj_name = urldecode($obj_name);

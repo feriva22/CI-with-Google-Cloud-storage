@@ -1,8 +1,38 @@
-<form action="<?php echo base_url();?>backend/testing/upload" method="post" enctype="multipart/form-data">
-<input type="file" name="file" id=""><br>
-<br><br>
-<input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+<?php echo $form;?>
+<script type="text/javascript" src="<?php echo base_url();?>assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+var urlUpload = '<?php echo $url;?>';
+
+$('#formUpload').submit(function(e){
+	e.preventDefault();
+	var formData = new FormData(this);
+	// Display the key/value pairs
+	for(var pair of formData.entries()) {
+   		console.log(pair[0]+ ', '+ pair[1]); 
+	}
 
 
-<button type="submit"> Uplaod</button>
-</form>
+	$.ajax({
+            url: urlUpload,
+            data: formData,
+			type: 'post',
+            mimeType: 'multipart/form-data',
+            contentType: false,
+            cache: false,
+			processData: false,
+            success: (resp)=>{
+                console.log(resp);
+            },
+            error: (jxhr)=>{
+				console.log(jxhr);
+			},
+			statusCode: {
+				303: function(){
+					alert('uploaded');
+				}
+			}
+        })
+});
+
+</script>

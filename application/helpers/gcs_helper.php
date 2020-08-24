@@ -136,6 +136,67 @@ if (!function_exists('list_gcs_file')){
      }
 }
 
+if (!function_exists('generate_v4_post_policy')){
+	/**
+	 * Generates a V4 POST Policy to be used in an HTML form and echo's form.
+	 *
+	 * @param string $bucketName the name of your Google Cloud bucket.
+	 * @param string $objectName the name of your Google Cloud object.
+	 *
+	 * @return void
+	 */
+	function generate_v4_post_policy($key_file, $bucketName,$objectName)
+	{
+		$storage = new StorageClient([
+            'keyFilePath' => $key_file
+		]);
+		$bucket = $storage->bucket($bucketName);
+
+		$object = $bucket->object($objectName);
+		/*$url = $object->signedUploadUrl(new \DateTime('tomorrow'), [
+			'version' => 'v4'
+		]);
+		return $url;*/
+		
+		$response = $bucket->generateSignedPostPolicyV4($objectName, new \DateTime('+10 minutes'), [
+			
+			'fields' => [
+				 'x-goog-meta-hello' => 'tes',
+				 'success_action_redirect' => 'http://localhost/backend/testing/confirmUploaded',
+				 'success_action_status' => '201'
+			]
+		]);
+		$url = $response['url'];
+		$output = "<form method='POST' id='formUpload' enctype='multipart/form-data'>" . PHP_EOL;
+		foreach ($response['fields'] as $name => $value) {
+			$output .= "  <input name='$name' value='$value' type='hidden'/>" . PHP_EOL;
+		}
+		$output .= "  <input type='file' name='file'/><br />" . PHP_EOL;
+		$output .= "  <input type='submit' value='Upload File' name='submit'/><br />" . PHP_EOL;
+		$output .= "</form>" . PHP_EOL;
+
+		return [$output,$url];
+	}
+}
+
+function get_bucket_info($key_file, $bucketName){
+	$storage = new StorageClient([
+		'keyFilePath' => $key_file
+	]);
+	$bucket = $storage->bucket($bucketName);
+
+	$result_update = $bucket->update([
+		'cors' => [
+			'origin' => ['http://localhost'],
+			'method' => ['GET','POST','PUT','DELETE'],
+			"responseHeader" => ["Access-Control-Allow-Origin"],
+			"maxAgeSeconds"=> 3600
+		]
+	]);
+
+	var_dump($result_update);
+}
+
 if (!function_exists('delete_gcs_file')){
     /**
      * Function to delete object on google cloud storage
@@ -344,10 +405,7 @@ if (!function_exists('download_gcs_file')){
         $url      = $obj_data->signedUrl($expire,$options);
 
         if($obj_data->exists()){
-            $end = microtime(TRUE);
-            echo "The code took " . ($end - $start) . " seconds to complete.";
-            echo "$url";
-            //header('Location: '.$url,TRUE,302);
+            header('Location: '.$url,TRUE,302);
             die();
         }else{
             http_response_code(404);

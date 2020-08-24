@@ -54,7 +54,7 @@ $config['bulan'] = array('Januari','Februari','Maret','April','Mei','Juni','Juli
 //SETTINGAN GOOGLE CLOUD STORAGE
 define('BUCKET_URL','gs://bucket_coba'); //use GS protocol
 define('BUCKET_NAME','bucket_coba'); //if not use stream wrapper
-define('GCS_KEY',APPPATH.'resources/long-adviser-271306-c8226878c32e.json');
+define('GCS_KEY',APPPATH.'resources/admin/long-adviser-271306-cabe2c3f0508.json');
 
 
 define('GCS_PETRO_KEY',APPPATH.'resources/devhrdocs-8ac4240448c0.json');
