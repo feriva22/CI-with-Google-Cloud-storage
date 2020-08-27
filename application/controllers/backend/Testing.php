@@ -1,10 +1,11 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+//defined('BASEPATH') OR exit('No direct script access allowed');
 
+/*
 header('Access-Control-Allow-Origin: *');
 Header('Access-Control-Allow-Headers: *'); //for allow any headers, insecure
 header("Access-Control-Allow-Methods: GET, OPTIONS,POST");
-
+*/
 require('./vendor/autoload.php');
 
 use Google\Cloud\Storage\StorageClient;
@@ -47,6 +48,7 @@ class Testing extends CI_Controller {
 	}
 	
 	public function getUploadSigned(){
+
 		$policy = generate_v4_post_policy(GCS_KEY,BUCKET_NAME,'hilih/yolo.png');
 
 		$data['form'] = $policy[0];
@@ -55,17 +57,16 @@ class Testing extends CI_Controller {
 	}
 
 	public function confirmUploaded(){
-		$objectName = $_GET['key'];
-		$bucket = $_GET['bucket'];
-		$etag = $_GET['etag'];
+		$objectName = $_POST['key'];
+		$bucket = $_POST['bucket'];
+		$etag = $_POST['etag'];
 
 		$info = info_gcs_file(GCS_KEY,$bucket,$objectName);
 
 		if(isset($info)){
-            var_dump($info);
-
+            echo json_encode(array('status' => 'OK'));
         }else {
-            echo "object \"$obj_name\" not found";
+			echo json_encode(array('status' => 'Failed'));
         }
 
 	}
@@ -85,11 +86,18 @@ class Testing extends CI_Controller {
         }
         if(isset($info)){
             var_dump($info->info());
-
         }else {
             echo "object \"$obj_name\" not found";
         }
     }
+
+	function downloadFile(){
+		$file = isset($_GET['file']) ? urldecode($_GET['file']) : show_error('need input');
+
+		$admin = FCPATH.'gcs_key/long-adviser-271306-742cda3a6376.json';
+
+		download_gcs_file($admin, $this->bucket,$file);
+	}
 
     public function delete($obj_name){
         $obj_name = urldecode($obj_name);
@@ -139,7 +147,7 @@ class Testing extends CI_Controller {
 
         $obj_name = urldecode($_GET['file']);
         try {
-            download_gcs_file(GCS_PETRO_KEY,BUCKET_PETRO_NAME,$obj_name);
+            download_gcs_file(GCS_KEY,BUCKET_NAME,$obj_name);
         } catch(Exception $e){
             echo "Exception type :".get_class($e);
             echo "\n<br>Message: ".$e->getMessage();

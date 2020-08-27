@@ -162,7 +162,6 @@ if (!function_exists('generate_v4_post_policy')){
 			
 			'fields' => [
 				 'x-goog-meta-hello' => 'tes',
-				 'success_action_redirect' => 'http://localhost/backend/testing/confirmUploaded',
 				 'success_action_status' => '201'
 			]
 		]);
